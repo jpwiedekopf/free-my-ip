@@ -1,0 +1,14 @@
+[Unit]
+Description=Update IP with FreeMyIp
+After=network-online.target
+After=sys-subsystem-net-devices-eno1.device
+Wants=sys-subsystem-net-devices-eno1.device
+Wants=network-online.target
+
+[Service]
+Restart=no
+Type=oneshot
+ExecStart=/etc/free-my-ip/update-ip.sh
+
+[Install]
+WantedBy=multi-user.target
