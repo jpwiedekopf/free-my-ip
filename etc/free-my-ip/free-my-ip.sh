@@ -5,7 +5,7 @@ if [ "$(uname)" == "Linux" ]; then
   # if running from a systemd service, wait a bit for the link to become active
 fi
 
-url="$(cat ./url.txt)"
+url="$(cat /etc/free-my-ip/url.txt)"
 
 echo "Updating IP: "
 curl "$url"
